@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Typing Test</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Acme&family=Almarai:wght@300;400&family=Anton&family=Fredoka+One&family=Lobster&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section class="start-quiz">
+      <h1>Typing Test</h1>
+      <section class="level">
+        <label for="level">Select Level : </label>
+        <select name="level" id="level">
+          <option value="easy">Easy</option>
+          <option value="medium">Medium</option>
+          <option value="hard">Hard</option>
+        </select>
+      </section>
+      <section class="start-dialog-box">
+        <h2>Start Test</h2>
+        <section class="start-icon"></section>
+      </section>
+    </section>
+    <section class="typing-screen">
+      <section class="typing-dialog-box">
+        <section class="header">
+          <section class="timer-show">
+            00:
+            <span class="time">10</span>
+            <span>s</span>
+          </section>
+          <section class="score-show">
+            <span>score</span>
+            <span class="score">0</span>
+          </section>
+        </section>
+        <section class="quiz">
+          <section class="word">Word</section>
+          <input type="text" name="typed-word" id="typed-word" autofocus />
+        </section>
+        <section class="your-score">
+          <h2>Your score:</h2>
+          <p class="final-score"></p>
+        </section>
+      </section>
+    </section>
+    <script>
+      let score = 0;
+      let startBtn = document.querySelector(".start-icon");
+      let startScreen = document.querySelector(".start-quiz");
+      let yourScore = document.querySelector(".your-score");
+      let header = document.querySelector(".header");
+      console.log(header);
+      let quiz = document.querySelector(".quiz");
+      yourScore.classList.add("hide");
+      let typingScreen = document
+        .querySelector(".typing-screen")
+        .classList.add("hide");
+      startBtn.addEventListener("click", () => {
+        typingScreen = document
+          .querySelector(".typing-screen")
+          .classList.remove("hide");
+        startScreen.classList.add("hide");
+        setInterval(() => {
+          startTimer();
+        }, 1000);
+        startTest();
+      });
+      timeCount = 10;
+      function startTimer() {
+        timeCount--;
+        if (timeCount >= 0) {
+          let time = document.querySelector(".time");
+          time.textContent = timeCount;
+          if (timeCount == 0) {
+            yourScore.classList.remove("hide");
+            header.classList.add("hide");
+            quiz.classList.add("hide");
+            let finalScore = document.querySelector(".final-score");
+            finalScore.textContent = score;
+          }
+        }
+      }
+      let easy = [
+        "bell",
+        "army",
+        "idol",
+        "bird",
+        "camp",
+        "card",
+        "dark",
+        "draw",
+        "fine",
+        "fish",
+        "good",
+        "hand",
+        "jump",
+        "king",
+        "list",
+        "mail",
+        "news",
+      ];
+      let medium = [
+        "abroad",
+        "animal",
+        "battle",
+        "coffee",
+        "decide",
+        "eating",
+        "family",
+        "ground",
+        "health",
+        "inside",
+        "legacy",
+        "marine",
+        "nation",
+        "online",
+        "palace",
+        "rarely",
+        "safety",
+      ];
+      let hard = [
+        "abstract",
+        "baseball",
+        "calendar",
+        "database",
+        "election",
+        "football",
+        "graduate",
+        "identity",
+        "keyboard",
+        "language",
+        "moderate",
+        "notebook",
+        "opponent",
+        "painting",
+        "printing",
+        "shoulder",
+        "swimming",
+      ];
+      let randomWord;
+      let scoreText = document.querySelector(".score");
+      function startTest() {
+        let select = document.querySelector("select");
+        let value = select.options[select.selectedIndex].value;
+        let level = eval(value);
+        randomWord = level[Math.floor(Math.random() * level.length)];
+        let word = document.querySelector(".word");
+        console.log(randomWord);
+        word.textContent = randomWord;
+        let input = document.querySelector("input");
+        input.focus();
+        input.oninput = function () {
+          if (input.value == randomWord) {
+            randomWord = level[Math.floor(Math.random() * level.length)];
+            score++;
+            word.textContent = randomWord;
+            input.value = "";
+            scoreText.textContent = score;
+            if (timeCount <= 8) {
+              if (value == "easy") {
+                timeCount += 3;
+                time.textContent = timeCount;
+              }
+              if (value == "medium") {
+                timeCount += 2;
+                time.textContent = timeCount;
+              }
+              if (value == "hard") {
+                timeCount += 2;
+                time.textContent = timeCount;
+              }
+            } else {
+              timeCount.textContent = 10 - timeCount;
+            }
+          }
+        };
+      }
+    </script>
+  </body>
+</html>

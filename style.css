@@ -1,0 +1,156 @@
+:root {
+  --primary-color: #2f4858;
+  --secondary-color: #f9f871;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  cursor: url("./cursor.png"), auto;
+}
+body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 95vh;
+  width: 100%;
+  background-color: var(--primary-color);
+  /* font-family: "Fredoka One", cursive; */
+  font-family: "Almarai", sans-serif;
+  font-family: "Lobster", cursive;
+  background-color: #2f4858;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 100 60'%3E%3Cg %3E%3Crect fill='%232f4858' width='11' height='11'/%3E%3Crect fill='%232f4959' x='10' width='11' height='11'/%3E%3Crect fill='%23304a5a' y='10' width='11' height='11'/%3E%3Crect fill='%23304a5b' x='20' width='11' height='11'/%3E%3Crect fill='%23314b5c' x='10' y='10' width='11' height='11'/%3E%3Crect fill='%23324c5d' y='20' width='11' height='11'/%3E%3Crect fill='%23324d5e' x='30' width='11' height='11'/%3E%3Crect fill='%23334d5f' x='20' y='10' width='11' height='11'/%3E%3Crect fill='%23334e60' x='10' y='20' width='11' height='11'/%3E%3Crect fill='%23344f60' y='30' width='11' height='11'/%3E%3Crect fill='%23345061' x='40' width='11' height='11'/%3E%3Crect fill='%23355062' x='30' y='10' width='11' height='11'/%3E%3Crect fill='%23355163' x='20' y='20' width='11' height='11'/%3E%3Crect fill='%23365264' x='10' y='30' width='11' height='11'/%3E%3Crect fill='%23365365' y='40' width='11' height='11'/%3E%3Crect fill='%23375466' x='50' width='11' height='11'/%3E%3Crect fill='%23375467' x='40' y='10' width='11' height='11'/%3E%3Crect fill='%23385568' x='30' y='20' width='11' height='11'/%3E%3Crect fill='%23385669' x='20' y='30' width='11' height='11'/%3E%3Crect fill='%2339576a' x='10' y='40' width='11' height='11'/%3E%3Crect fill='%2339576b' y='50' width='11' height='11'/%3E%3Crect fill='%233a586c' x='60' width='11' height='11'/%3E%3Crect fill='%233a596d' x='50' y='10' width='11' height='11'/%3E%3Crect fill='%233b5a6e' x='40' y='20' width='11' height='11'/%3E%3Crect fill='%233b5b6f' x='30' y='30' width='11' height='11'/%3E%3Crect fill='%233c5b70' x='20' y='40' width='11' height='11'/%3E%3Crect fill='%233c5c71' x='10' y='50' width='11' height='11'/%3E%3Crect fill='%233d5d72' x='70' width='11' height='11'/%3E%3Crect fill='%233d5e73' x='60' y='10' width='11' height='11'/%3E%3Crect fill='%233e5f74' x='50' y='20' width='11' height='11'/%3E%3Crect fill='%233e5f75' x='40' y='30' width='11' height='11'/%3E%3Crect fill='%233f6076' x='30' y='40' width='11' height='11'/%3E%3Crect fill='%233f6177' x='20' y='50' width='11' height='11'/%3E%3Crect fill='%23406278' x='80' width='11' height='11'/%3E%3Crect fill='%23406379' x='70' y='10' width='11' height='11'/%3E%3Crect fill='%2341637a' x='60' y='20' width='11' height='11'/%3E%3Crect fill='%2342647b' x='50' y='30' width='11' height='11'/%3E%3Crect fill='%2342657c' x='40' y='40' width='11' height='11'/%3E%3Crect fill='%2343667d' x='30' y='50' width='11' height='11'/%3E%3Crect fill='%2343677e' x='90' width='11' height='11'/%3E%3Crect fill='%2344677f' x='80' y='10' width='11' height='11'/%3E%3Crect fill='%23446880' x='70' y='20' width='11' height='11'/%3E%3Crect fill='%23456981' x='60' y='30' width='11' height='11'/%3E%3Crect fill='%23456a82' x='50' y='40' width='11' height='11'/%3E%3Crect fill='%23466b83' x='40' y='50' width='11' height='11'/%3E%3Crect fill='%23466c84' x='90' y='10' width='11' height='11'/%3E%3Crect fill='%23476c85' x='80' y='20' width='11' height='11'/%3E%3Crect fill='%23476d86' x='70' y='30' width='11' height='11'/%3E%3Crect fill='%23486e87' x='60' y='40' width='11' height='11'/%3E%3Crect fill='%23496f88' x='50' y='50' width='11' height='11'/%3E%3Crect fill='%23497089' x='90' y='20' width='11' height='11'/%3E%3Crect fill='%234a708a' x='80' y='30' width='11' height='11'/%3E%3Crect fill='%234a718b' x='70' y='40' width='11' height='11'/%3E%3Crect fill='%234b728c' x='60' y='50' width='11' height='11'/%3E%3Crect fill='%234b738d' x='90' y='30' width='11' height='11'/%3E%3Crect fill='%234c748e' x='80' y='40' width='11' height='11'/%3E%3Crect fill='%234c758f' x='70' y='50' width='11' height='11'/%3E%3Crect fill='%234d7590' x='90' y='40' width='11' height='11'/%3E%3Crect fill='%234d7691' x='80' y='50' width='11' height='11'/%3E%3Crect fill='%234e7792' x='90' y='50' width='11' height='11'/%3E%3C/g%3E%3C/svg%3E");
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.typing-screen,
+.start-quiz {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+.typing-screen,
+.start-quiz {
+  justify-content: center;
+}
+h1,
+.level {
+  position: absolute;
+  top: 5%;
+}
+.level {
+  top: 23%;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+h1 {
+  flex-basis: 20%;
+  /* margin-top: 3em; */
+  font-size: 5rem;
+  color: var(--secondary-color);
+  /* margin-top: 0.5em; */
+}
+.level {
+  margin-bottom: 0.9em;
+  display: flex;
+  align-items: center;
+}
+.typing-dialog-box,
+.start-dialog-box {
+  padding: 0.9em;
+  background-color: var(--secondary-color);
+  height: 35%;
+  border-radius: 10px;
+  width: 25%;
+  text-align: center;
+  box-shadow: 10;
+  justify-content: center;
+}
+
+.start-icon {
+  background-image: url(./play-button.png);
+  background-repeat: no-repeat;
+  width: 68px;
+  height: 68px;
+  background-size: contain;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: url("./up-sign.png"), auto;
+}
+.start-icon:hover {
+  border-radius: 150px;
+  box-shadow: 0 0 8px #405d6e;
+  transform: scale(1.05);
+}
+h2,
+.start-icon {
+  margin-top: 2em;
+}
+h2 {
+  font-family: "Almarai", sans-serif;
+}
+.word {
+  font-size: 2rem;
+  font-family: "Almarai", sans-serif;
+  margin-top: 1.2em;
+  margin-bottom: 1em;
+  background-color: #fff;
+  clip-path: polygon(100% 0, 90% 50%, 100% 100%, 0% 100%, 10% 50%, 0% 0%);
+  padding: 0.2em;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+#typed-word {
+  width: 70%;
+  padding: 0.5em;
+  font-size: 1.2rem;
+}
+
+label {
+  font-size: 1.5rem;
+  color: var(--secondary-color);
+  color: white;
+}
+select {
+  padding: 0.4em;
+  margin-left: 2em;
+  background: #000;
+  color: white;
+}
+select,
+#typed-word {
+  font-family: "Almarai", sans-serif;
+}
+.your-score {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* margin: auto auto; */
+  height: 100%;
+}
+.your-score h2 {
+  margin-top: 0;
+  font-size: 2rem;
+  font-family: "Lobster", cursive;
+}
+.your-score p {
+  font-family: "Almarai", sans-serif;
+  margin-left: 0.5em;
+  font-size: 2rem;
+}
+.hide {
+  display: none;
+}
+.level:hover {
+  cursor: url("./cursor.png"), auto;
+}
