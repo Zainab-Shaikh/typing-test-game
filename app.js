@@ -9,21 +9,37 @@ yourScore.classList.add("hide");
 let typingScreen = document
   .querySelector(".typing-screen")
   .classList.add("hide");
+let homePage = document.querySelector(".home-page");
+homePage.addEventListener("click", () => {
+  location.reload();
+});
 startBtn.addEventListener("click", () => {
-  typingScreen = document
-    .querySelector(".typing-screen")
-    .classList.remove("hide");
-  startScreen.classList.add("hide");
   setInterval(() => {
     startTimer();
   }, 1000);
   startTest();
 });
 timeCount = 10;
+let retry = document.querySelector(".retry");
+let input = document.querySelector("input");
+retry.addEventListener("click", () => {
+  timeCount = 11;
+  time.textContent = timeCount;
+  score = 0;
+  scoreText.textContent = score;
+  yourScore.classList.add("hide");
+  header.classList.remove("hide");
+  quiz.classList.remove("hide");
+  startTimer();
+  startTest();
+  input.value = "";
+});
+
+let time;
 function startTimer() {
   timeCount--;
   if (timeCount >= 0) {
-    let time = document.querySelector(".time");
+    time = document.querySelector(".time");
     time.textContent = timeCount;
     if (timeCount == 0) {
       yourScore.classList.remove("hide");
@@ -93,15 +109,27 @@ let hard = [
 ];
 let randomWord;
 let scoreText = document.querySelector(".score");
+let select = document.querySelector("select");
+if (localStorage.getItem("value") == null) {
+  select.value = "easy";
+} else {
+  select.value = localStorage.getItem("value");
+}
 function startTest() {
-  let select = document.querySelector("select");
+  startScreen.classList.add("hide");
+  quiz.classList.remove("hide");
+  header.classList.remove("hide");
+  typingScreen = document
+    .querySelector(".typing-screen")
+    .classList.remove("hide");
   let value = select.options[select.selectedIndex].value;
+  localStorage.setItem("value", value);
   let level = eval(value);
   randomWord = level[Math.floor(Math.random() * level.length)];
   let word = document.querySelector(".word");
   console.log(randomWord);
   word.textContent = randomWord;
-  let input = document.querySelector("input");
+  input = document.querySelector("input");
   input.focus();
   input.oninput = function () {
     if (input.value == randomWord) {

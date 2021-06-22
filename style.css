@@ -51,6 +51,9 @@ h1,
 .header {
   display: flex;
   justify-content: space-between;
+  width: 100%;
+  flex-basis: 10%;
+  align-self: flex-start;
 }
 h1 {
   flex-basis: 20%;
@@ -73,15 +76,24 @@ h1 {
   width: 25%;
   text-align: center;
   box-shadow: 10;
+  display: flex;
+  align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
-
+.typing-dialog-box {
+  justify-content: flex-start;
+}
+.quiz {
+  flex-basis: 50%;
+}
 .start-icon {
   background-image: url(./play-button.png);
   background-repeat: no-repeat;
   width: 68px;
   height: 68px;
   background-size: contain;
+  margin: 2em;
   margin-left: auto;
   margin-right: auto;
   cursor: url("./up-sign.png"), auto;
@@ -91,9 +103,8 @@ h1 {
   box-shadow: 0 0 8px #405d6e;
   transform: scale(1.05);
 }
-h2,
-.start-icon {
-  margin-top: 2em;
+h2 {
+  margin-top: 1em;
 }
 h2 {
   font-family: "Almarai", sans-serif;
@@ -106,7 +117,7 @@ h2 {
   background-color: #fff;
   clip-path: polygon(100% 0, 90% 50%, 100% 100%, 0% 100%, 10% 50%, 0% 0%);
   padding: 0.2em;
-  width: 50%;
+  width: 65%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -137,6 +148,7 @@ select,
   justify-content: center;
   /* margin: auto auto; */
   height: 100%;
+  flex-wrap: wrap;
 }
 .your-score h2 {
   margin-top: 0;
@@ -153,4 +165,57 @@ select,
 }
 .level:hover {
   cursor: url("./cursor.png"), auto;
+}
+.home-page,
+.retry {
+  /* display: block; */
+  font-size: 1rem;
+  padding: 0.5em 1em;
+  margin: 1em;
+  cursor: pointer;
+  font-weight: 700;
+}
+.home-page {
+  background-color: var(--primary-color);
+  border: none;
+  color: white;
+  border-radius: 5px;
+}
+.retry {
+  color: var(--primary-color);
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+}
+.home-page:hover,
+.retry:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgb(104, 104, 104);
+}
+.buttons {
+  flex-basis: 100%;
+  display: block;
+}
+@media (max-width: 1024px) {
+  .typing-dialog-box,
+  .start-dialog-box {
+    width: 50%;
+    height: 30%;
+  }
+  .word {
+    margin-top: 0.8em;
+    margin-bottom: 0.8em;
+  }
+}
+@media (max-width: 500px) {
+  .typing-dialog-box,
+  .start-dialog-box {
+    width: 80%;
+  }
+  .word {
+    font-size: 1.5rem;
+  }
+  .quiz {
+    margin-top: 1.5em;
+  }
 }
