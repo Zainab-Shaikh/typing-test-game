@@ -132,7 +132,7 @@ function startTest() {
   input = document.querySelector("input");
   input.focus();
   input.oninput = function () {
-    if (input.value == randomWord) {
+    if (input.value.toLowerCase() == randomWord) {
       randomWord = level[Math.floor(Math.random() * level.length)];
       score++;
       word.textContent = randomWord;
